@@ -34,9 +34,9 @@ public class Student
      s5.age=25;
      s5.noOfFriends=4;
      
-     int totalNoOfFriends = s1.getNoOfFriends()+s2.getNoOfFriends()+s3.getNoOfFriends()+s4.getNoOfFriends()+s5.getNoOfFriends();
+     int noOfFriends = s1.getNoOfFriends()+s2.getNoOfFriends()+s3.getNoOfFriends()+s4.getNoOfFriends()+s5.getNoOfFriends();
      
-     System.out.println("Sum of all noOfFriends:"+ totalNoOfFriends);
+     System.out.println("Sum of noOfFriends:"+ NoOfFriends);
 }
 	
 }
