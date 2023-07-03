@@ -1,29 +1,28 @@
 class EmployeeData {
   public static void main(String args[]) {
-Employee emp1=new Employee(26, 1000, 27);
-Employee emp2=new Employee(39, 1250, 25);
-Employee emp3=new Employee(41, 1100, 29);
-Employee emp4=new Employee(53, 1050, 26);
-Employee emp5=new Employee(62, 1150, 24);
-System.out.println("Salary of Employee1:" +emp1.compute());
-System.out.println("Salary of Employee2:" +emp2.compute());
-System.out.println("Salary of Employee3:" +emp3.compute());
-System.out.println("Salary of Employee4:" +emp4.compute());
-System.out.println("Salary of Employee5:" +emp5.compute());
+Employee emp1=new Employee(1, 26, 1000, 27);
+Employee emp2=new Employee(2, 39, 1250, 25);
+Employee emp3=new Employee(3, 41, 1100, 29);
+Employee emp4=new Employee(4, 53, 1050, 26);
+Employee emp5=new Employee(5, 62, 1150, 24);
 
 
 
 
-int salary[]={emp1.compute(),emp2.compute(),emp3.compute(),emp4.compute(),emp5.compute()};
-int maximumSalary=emp1.compute();
 
-for(int i=1;i<salary.length;i++){
+Employee employees[]={emp1,emp2,emp3,emp4,emp5};
+Employee max=employees[0];
 
-if(salary[i]>maximumSalary)
-maximumSalary=salary[i];
+for(int i=0;i<employees.length;i++){
+int currentMonthlySalary = employees[i].monthlySalary();
+  System.out.println("Salary of Employee"+(i+1) +":"   +currentMonthlySalary);
+
+if(currentMonthlySalary>max.monthlySalary()){
+max=employees[i];
+}
 
 }
-System.out.println("Employee with maximumSalary:"+maximumSalary );
+System.out.println("Employee with maximumSalary:"+max.id );
 
 
 
@@ -32,28 +31,30 @@ System.out.println("Employee with maximumSalary:"+maximumSalary );
 }
 }
 class Employee{
+int id;
 int age;
 int salaryPerDay;
 int noOfDays;
-int monthlySalary;
-Employee(int a, int perDay, int noOfDays){
+
+Employee(int id, int a, int perDay, int noOfDays){
+this.id=id;
 this.age=a;
 this.salaryPerDay=perDay;
 this.noOfDays=noOfDays;
 }
 
-int compute(){
+int monthlySalary(){
 
 
-if(age>40){
-return monthlySalary=(salaryPerDay+100)*noOfDays;
+if(age>60){
+return (salaryPerDay+200)*noOfDays;
 }
-else if(age>60)
+else if(age>40)
 {
-return monthlySalary=(salaryPerDay+200)*noOfDays;
+return (salaryPerDay+100)*noOfDays;
 
 }
-return monthlySalary=salaryPerDay*noOfDays;
+return salaryPerDay*noOfDays;
 }
 
 
