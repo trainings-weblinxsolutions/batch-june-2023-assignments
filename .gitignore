@@ -1,0 +1,6 @@
+password.txt
+.DS_Store
+*.class
+.classpath
+.project
+bin/
